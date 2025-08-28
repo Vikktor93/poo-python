@@ -1,2 +1,16 @@
-# Ignorar el entorno virtual
+# Ignorar carpetas específicas
+Ejercicios/
+Examen/
+Guias/
+Labs/
+Parcial/
+
+# Ignorar entornos virtuales de Python
 .venv/
+venv/
+env/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
