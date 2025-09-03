@@ -1,9 +1,9 @@
 # Ignorar carpetas específicas
-Ejercicios/
 Examen/
 Guias/
 Labs/
 Parcial/
+Estudiantes/
 
 # Ignorar entornos virtuales de Python
 .venv/
