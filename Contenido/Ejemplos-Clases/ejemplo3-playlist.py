@@ -3,7 +3,7 @@ class Cancion:
     def __init__(self, titulo, artista, duracion_segundos):
         self.titulo = titulo
         self.artista = artista
-        self.duracion_segundos = int(duracion_segundos)
+        self.duracion_segundos = int(duracion_segundos) # que muestre los segundos como entero :)
 
     # Método de clase que Convierte de minutos a segundos
     def min_seg(self):
@@ -13,7 +13,7 @@ class Cancion:
     
     # Método mágico que muestra la canción utilizando un print()
     def __str__(self):
-        return f"{self.titulo} — {self.artista} ({self.min_seg()})"
+        return f"{self.titulo} - {self.artista} ({self.min_seg()})"
 
 
 class Playlist:
@@ -42,11 +42,11 @@ class Playlist:
     def __len__(self):
         return len(self.canciones)
 
-    # Método mágico que combina dos playlists en una nueva playlist
+    # Método mágico que combina dos playlists en una nueva_playlist playlist
     def __add__(self, otra):
-        nueva = Playlist(f"{self.nombre} + {otra.nombre}")  # Nombre de la nueva playlist
-        nueva.canciones = self.canciones + otra.canciones  # Une las listas de canciones
-        return nueva
+        nueva_playlist = Playlist(f"{self.nombre} + {otra.nombre}")  # Nombre de la nueva_playlist playlist
+        nueva_playlist.canciones = self.canciones + otra.canciones  # Une las listas de canciones
+        return nueva_playlist
         
     # Método mágico que devuelve el formato solicitado de la playlist
     def __str__(self):
@@ -56,7 +56,7 @@ class Playlist:
         lineas = [encabezado_playlist]
         for i, c in enumerate(self.canciones, start=1):  # Recorre las canciones numerándolas desde 1 en lugar de 0 (propiedad start)
             lineas.append(f"  {i}. {c}")
-        return "\n".join(lineas) # Une todas los strings de la lista en un solo texto, separadas por saltos de línea
+        return "\n".join(lineas) # Une todas los strings de la lista en un solo texto, adempas de separadas por saltos de línea ("\n")
 
 # Ejemplo de uso (creación de objetos)
 
@@ -73,17 +73,19 @@ playlist1.agregar(cancion2)
 playlist1.agregar(cancion3)
 
 # Crear playlist de Rock y agregar canción
-playlist2 = Playlist("Rock")
+playlist2 = Playlist("Rockcito")
 playlist2.agregar(cancion4)
 
 # Mostrar ambas playlists - con salto de lineas al final para que sea mas bonito :) 
-print(playlist1, end="\n\n")
-print(playlist2, end="\n\n")
+print(playlist1)
+print("\n")
+print(playlist2)
+print("\n")
 
-# Combinar playlists con el operador +
-p3 = playlist1 + playlist2
-print("Combinada:\n", p3, sep="")
+# Combinar playlists con el operador + (__add__)
+playlist3 = playlist1 + playlist2
+print("Playlist Combinada:\n", playlist3) 
 
 # Mostrar cantidad de canciones de la playlist combinada
-print("\nCantidad de canciones en Playlist Combinada:", len(p3))
+print("\nCantidad de canciones en Playlist Combinada:", len(playlist3))
 
